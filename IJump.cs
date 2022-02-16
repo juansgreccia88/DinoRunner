@@ -4,7 +4,10 @@ using UnityEngine;
 
 public interface IJump
 {
-    void Jump();
+    /*public void PressJump();
+    public void notPressJump();*/
+    void AvatarJump(bool jump);
     void RealisticFall();
     void JumpHeightVariation();
+    public void CheckJump(bool jump);
 }

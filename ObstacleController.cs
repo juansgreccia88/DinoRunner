@@ -10,7 +10,6 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] private float spawnTime;
     private int nextObstacle = 0;
 
-    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +20,12 @@ public class ObstacleController : MonoBehaviour
             obstacles.Add(newObj);
             obstacles[i].gameObject.SetActive(false);
         }
-
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.gameState == GameManager.GameState.PLAY)
+        if (GameManager.Instance.gameState == GameManager.GameState.PLAY)
         {
             if (spawnTime >= 0)
             {
